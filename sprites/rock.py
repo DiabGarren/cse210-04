@@ -3,7 +3,9 @@ import pygame
 
 
 class Rock():
-
+    """Program responsible for rock creation, the dimensions of the rock, and their placement in the game. The program ensures the rock placement will never
+    exceed the games screen."""
+    
     def __init__(self, width):
         self._rock_img = "images/rock.png"
         
