@@ -7,8 +7,10 @@ from score import Score
 
 
 class DrawScreen():
+    """Outputs the game state. The responsibility of the class of objects is to draw the game state on the screen."""
 
     def __init__(self, width, height):
+        """Constructs a new screen."""
         self._size = (width, height)
         self._rock = Rock(width)
         self._rocks = []
@@ -34,6 +36,7 @@ class DrawScreen():
         self._screen.fill((0, 0, 0))     
 
     def draw_rock(self):
+        """Draws the rocks on the screen.""" 
         
         for rocks in self._rocks:
             x, y = rocks
@@ -51,6 +54,7 @@ class DrawScreen():
             self._rocks.append(self._rock.gen_rock_pos())
 
     def draw_gem(self):
+        """Draws the gems on the screen."""
 
         for gems in self._gems:
             x, y = gems
@@ -68,11 +72,13 @@ class DrawScreen():
             self._gems.append(self._gem.gen_gem_pos())
     
     def draw_player(self):
+        """Draws the player on the screen"""
         x, y = self._player.get_player_pos()
         x, y = self._movement.move_player(x, y)
         self._screen.blit(self._player.get_player(), self._player.move_player(x, y))
     
     def collision(self):
+        """Controls points based on collision."""
         player_x = self._player.get_player_pos()[0], self._player.get_player_pos()[0] + self._player.get_width()
         player_y = self._player.get_player_pos()[1], self._player.get_player_pos()[1] + self._player.get_height()
         
@@ -98,10 +104,12 @@ class DrawScreen():
         
 
     def update_score(self):
+        """Gets the current score and returns it."""
         self._score_obj.change_score(self._score)
         self._screen.blit(self._score_obj.display_score(), (10, 10))
 
     def game_over(self):
+        """Ends the game if the player's score is less than 0"""
         font = pygame.font.Font('freesansbold.ttf', 24)
         text1 = "Game over"
         text2 = f"Score: {self._score}"
@@ -111,6 +119,7 @@ class DrawScreen():
         self._screen.blit(font.render(text3, 1, (255, 55, 55)), (self._size[0]/2, 200))
     
     def restart(self):
+        """Restarts the game once the player chooses to"""
         self._score = 0
         self._score_obj.change_score(self._score)
 

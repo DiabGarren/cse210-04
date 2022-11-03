@@ -5,12 +5,31 @@ from keyboard_support.keyboard_input import Keyboard
 
 class Director(DrawScreen):
 
+    """A person who directs the game. 
+    
+    The responsibility of a Director is to control the sequence of play.
+        
+    """
+
     def __init__(self, width, height):
+        """Constructs a new Director using the specified keyboard and video services.
+        
+        Args:
+            width: The width of the game screen
+            height: The height of the game screen
+        """
         super(Director, self).__init__(width, height)
         self._play_again = True
         self._keyboard = Keyboard()
 
     def start_game(self):
+        """
+        Starts the game by running the main game loop.
+
+        Args:
+            self (Director): an instance of Director.
+        """
+
         pygame.init()
         self._font = pygame.font.Font('freesansbold.ttf', 24)
         pygame.display.set_caption("Greed")
