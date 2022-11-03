@@ -1,7 +1,8 @@
 from keyboard_support.keyboard_input import Keyboard
 
 class player_movement(Keyboard):
-
+    """Inherits the attributes and functions from class Keyboard to control player movement. Set an x, y location to manipulate players location."""
+    
     def __init__(self):
         super(player_movement, self).__init__()
     
