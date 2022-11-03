@@ -1,7 +1,8 @@
 import pygame
 
 class Player():
-
+    """Program responsible for player creation, the dimensions of the player, and their placement in the game."""
+    
     def __init__(self, width, height):
         self._player_img = "images/player.png"
         self._player = pygame.image.load(self._player_img)
