@@ -3,7 +3,9 @@ import pygame
 
 
 class Gem():
-
+    """Program responsible for gem creation, the dimensions of the gem, and their placement in the game. The program ensures the gem placement will never
+    exceed the games screen."""
+    
     def __init__(self, width):
         self._gem_img = "images/gem.png"
         self._gem = pygame.image.load(self._gem_img)
