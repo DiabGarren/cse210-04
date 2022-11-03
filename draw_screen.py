@@ -42,6 +42,9 @@ class DrawScreen():
                 y += 15
                 self._rocks[self._rocks.index((x, y-15))] = (x, y)
 
+                if y > self._size[1]:
+                    self._rocks.pop(self._rocks.index((x, y)))
+
             self._screen.blit(self._rock.get_rock(), self._rock.move_rock(x, y))
                 
         if self._frames%40 == 0:
@@ -55,11 +58,16 @@ class DrawScreen():
             if self._frames%self._move_time == 0:
                 y += 15
                 self._gems[self._gems.index((x, y-15))] = (x, y)
-
+                
+                if y > self._size[1]:
+                    self._gems.pop(self._gems.index((x, y)))
+            
             self._screen.blit(self._gem.get_gem(), self._gem.move_gem(x, y))
         
         if self._frames%40 == 0:
             self._gems.append(self._gem.gen_gem_pos())
+        
+        print(len(self._gems), len(self._rocks))
     
     def draw_player(self):
         x, y = self._player.get_player_pos()
