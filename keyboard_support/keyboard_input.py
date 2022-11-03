@@ -1,6 +1,8 @@
 import keyboard
 
 class Keyboard():
+    """Responsible for setting up keyboard movements throughout the game so the player can move and interact with the falling objects. Player can also use
+    y or n to restart game if they lose. Program set up to listen for changes in the keyboard and react to player movement."""
     
     def __init__(self):
         self._left = 'a' 
