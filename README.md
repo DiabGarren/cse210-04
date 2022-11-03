@@ -26,7 +26,7 @@ _Greed is played according to the following rules._
 - The game remains generally true to the order of play described earlier.
 
 **Project Structure:**
-_The project files and folders are organized as follows:_
+_The project files are the following:_
 
 - +-- keyboard_input.py 
 - +-- player_movement.py 
@@ -42,7 +42,23 @@ _The project files and folders are organized as follows:_
 - +-- rock.png 
 - +-- player.png
 - +-- pycache
-- +-- README.md 
+- +-- README.md
+
+---
+
+_The project files are organized in folders as follows:_
+
+```
+root                                (project root folder)
++-- images                          (images for game)
++-- keyboard_support                (specific game classes)
++-- sprites                         (specific game classes)
++-- director.py                     (specific game classes)
++-- draw_screen.py                  (specific game classes)
++-- main.py                         (entry point for program)
++-- score.py                        (specific game classes)
++-- README.md                       (general info)
+```
 
 **Required Technologies:**
 
