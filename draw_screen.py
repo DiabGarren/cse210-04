@@ -66,8 +66,6 @@ class DrawScreen():
         
         if self._frames%40 == 0:
             self._gems.append(self._gem.gen_gem_pos())
-        
-        print(len(self._gems), len(self._rocks))
     
     def draw_player(self):
         x, y = self._player.get_player_pos()
