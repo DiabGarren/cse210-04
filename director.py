@@ -13,6 +13,7 @@ class Director(DrawScreen):
     def start_game(self):
         pygame.init()
         self._font = pygame.font.Font('freesansbold.ttf', 24)
+        pygame.display.set_caption("Greed")
         self._screen = pygame.display.set_mode(self._size)
         self.clear_screen()
 
